@@ -28,35 +28,60 @@
 				<h2>What I Do</h2>
 			</div>
 			<div class="service-list">
-				<article class="service-card">
+				<article class="service-card" data-service="uiux" tabindex="0">
 					<div class="service-card__icon" aria-hidden="true">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 4v5"></path><path d="M7 13h4M7 16h7"></path></svg>
 					</div>
 					<div>
 						<h3>UI/UX Design</h3>
 						<p>Designing clean and intuitive interfaces for websites and applications, from wireframes and layouts to polished prototypes.</p>
+						<button class="service-card__toggle" type="button" aria-expanded="false" aria-controls="service-details">Click to Show Skills <span aria-hidden="true">&rarr;</span></button>
 					</div>
 				</article>
-				<article class="service-card">
+				<article class="service-card" data-service="graphic" tabindex="0">
 					<div class="service-card__icon" aria-hidden="true">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z"></path><path d="m4 7 8 4 8-4M12 11v10"></path><path d="m8 5 8 4"></path></svg>
 					</div>
 					<div>
 						<h3>Graphic Design</h3>
 						<p>Creating visual materials such as posters, promotional graphics, social media content, product layouts, and other digital designs.</p>
+						<button class="service-card__toggle" type="button" aria-expanded="false" aria-controls="service-details">Click to Show Skills <span aria-hidden="true">&rarr;</span></button>
 					</div>
 				</article>
-				<article class="service-card">
+				<article class="service-card" data-service="visual" tabindex="0">
 					<div class="service-card__icon" aria-hidden="true">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17M3.5 12h17M6 6l12 12M18 6 6 18"></path></svg>
 					</div>
 					<div>
 						<h3>Visual Design</h3>
 						<p>Working with typography, colors, layouts, imagery, and visual hierarchy to create designs that feel consistent and engaging.</p>
+						<button class="service-card__toggle" type="button" aria-expanded="false" aria-controls="service-details">Click to Show Skills <span aria-hidden="true">&rarr;</span></button>
 					</div>
 				</article>
 			</div>
+			<div class="service-connectors" aria-hidden="true">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="service-details" id="service-details" hidden>
+				<div class="service-details__intro">
+					<p class="eyebrow">Selected focus</p>
+					<h3 id="service-details-title">UI/UX Design</h3>
+				</div>
+				<div class="service-details__columns">
+					<div>
+						<h4>Skills</h4>
+						<ul id="service-skills"></ul>
+					</div>
+					<div>
+						<h4>Tools I Use</h4>
+						<ul class="tool-list" id="service-tools"></ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</main>
+	<script type="module" src="js/script.js"></script>
 </body>
 </html>

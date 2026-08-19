@@ -1,0 +1,54 @@
+{
+  "uiux": {
+    "title": "UI/UX Design",
+    "skills": [
+      "UI Design",
+      "UX Design",
+      "Wireframing",
+      "Prototyping",
+      "User Flow",
+      "Responsive Design"
+    ],
+    "tools": [
+      "Figma",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind CSS",
+      "React"
+    ]
+  },
+  "graphic": {
+    "title": "Graphic Design",
+    "skills": [
+      "Graphic Design",
+      "Layout Design",
+      "Branding & Visual Identity",
+      "Photo Manipulation",
+      "Promotional Design"
+    ],
+    "tools": [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Canva",
+      "Capcut"
+    ]
+  },
+  "visual": {
+    "title": "Visual Design",
+    "skills": [
+      "Layout Design",
+      "Typography",
+      "Color Theory",
+      "Branding & Visual Identity",
+      "Promotional Design",
+      "Responsive Design"
+    ],
+    "tools": [
+      "Figma",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Canva"
+    ]
+  }
+}
