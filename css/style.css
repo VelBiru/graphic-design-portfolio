@@ -91,7 +91,7 @@ body {
   inset: -5%;
   background: url('../assets/images/background.jpg') center / cover no-repeat;
   content: '';
-  filter: blur(7px);
+  filter: blur(2px);
   opacity: .5;
   transform: scale(1.12);
 }
@@ -1366,5 +1366,40 @@ h1 span {
   .service-details__columns {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+}
+
+/* Page-specific background artwork */
+.hero::before {
+  inset: -12%;
+  background-image: url('../assets/images/background_2.jpg');
+  background-position: center;
+  background-size: cover;
+  filter: blur(3px);
+  opacity: .5;
+  transform: scale(1.18);
+}
+
+.about-page {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+}
+
+.about-page::before {
+  position: fixed;
+  z-index: -2;
+  inset: -12%;
+  background: url('../assets/images/about_background.jpg') center / cover no-repeat;
+  content: '';
+  filter: blur(3px);
+  opacity: .42;
+  transform: scale(1.18);
+}
+
+@media (max-width: 760px) {
+  .hero::before,
+  .about-page::before {
+    transform: rotate(90deg) scale(1.18);
   }
 }
