@@ -2,13 +2,92 @@
 
 const serviceDetails = document.querySelector('#service-details');
 
+const aboutTabs = document.querySelectorAll('.about-section-tabs__button');
+const aboutPanels = document.querySelectorAll('.about-panel');
+
+aboutTabs.forEach((tab) => {
+	tab.addEventListener('click', () => {
+		const selectedPanel = document.querySelector(`#about-panel-${tab.dataset.aboutTab}`);
+
+		aboutTabs.forEach((button) => {
+			button.classList.toggle('is-active', button === tab);
+			button.setAttribute('aria-selected', String(button === tab));
+		});
+		aboutPanels.forEach((panel) => {
+			panel.hidden = panel !== selectedPanel;
+				panel.classList.remove('is-active');
+		});
+			selectedPanel.classList.add('is-active');
+	});
+});
+
 if (serviceDetails) {
-	const serviceData = await fetch('data/services.json').then((response) => {
+	const serviceData = await fetch('data/about.json').then((response) => {
 		if (!response.ok) {
 			throw new Error('Unable to load service data.');
 		}
 
 		return response.json();
+	});
+	const serviceList = document.querySelector('.service-list');
+	const approachSteps = document.querySelector('.approach-steps');
+	const iconTemplates = {
+		uiux: '<rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 4v5"></path><path d="M7 13h4M7 16h7"></path>',
+		graphic: '<path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z"></path><path d="m4 7 8 4 8-4M12 11v10"></path><path d="m8 5 8 4"></path>',
+		visual: '<circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17M3.5 12h17M6 6l12 12M18 6 6 18"></path>'
+	};
+
+	serviceList.replaceChildren(...Object.entries(serviceData)
+		.filter(([key]) => key !== 'approach')
+		.map(([key, data]) => {
+			const card = document.createElement('article');
+			card.className = 'service-card';
+			card.dataset.service = key;
+			card.tabIndex = 0;
+			card.innerHTML = `
+				<div class="service-card__icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${iconTemplates[data.icon]}</svg>
+				</div>
+				<div>
+					<h3>${data.title}</h3>
+					<p>${data.description}</p>
+					<button class="service-card__toggle" type="button" aria-expanded="false" aria-controls="service-details">Click to Show Skills <span aria-hidden="true">&rarr;</span></button>
+				</div>
+			`;
+			return card;
+		}));
+
+	approachSteps.replaceChildren(...serviceData.approach.map((step, index) => {
+		const article = document.createElement('article');
+		article.className = 'approach-step';
+		article.innerHTML = `
+			<button class="approach-step__trigger" type="button" aria-expanded="false" aria-controls="approach-step-${index + 1}">
+				<span>${step.number}</span><strong>${step.title}</strong><span class="approach-step__icon" aria-hidden="true">+</span>
+			</button>
+			<div class="approach-step__description" id="approach-step-${index + 1}" hidden><p>${step.description}</p></div>
+		`;
+		return article;
+	}));
+
+	document.querySelectorAll('.approach-step__trigger').forEach((trigger) => {
+		trigger.addEventListener('click', () => {
+			const description = document.querySelector(`#${trigger.getAttribute('aria-controls')}`);
+			const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+			document.querySelectorAll('.approach-step__trigger').forEach((otherTrigger) => {
+				const otherDescription = document.querySelector(`#${otherTrigger.getAttribute('aria-controls')}`);
+
+				if (otherTrigger !== trigger) {
+					otherTrigger.setAttribute('aria-expanded', 'false');
+					otherDescription.hidden = true;
+					otherTrigger.closest('.approach-step').classList.remove('is-open');
+				}
+			});
+
+			trigger.setAttribute('aria-expanded', String(!isOpen));
+			description.hidden = isOpen;
+			trigger.closest('.approach-step').classList.toggle('is-open', !isOpen);
+		});
 	});
 
 	const title = document.querySelector('#service-details-title');

@@ -1,0 +1,87 @@
+{
+  "uiux": {
+    "title": "UI/UX Design",
+    "description": "Designing clean and intuitive interfaces for websites and applications, from wireframes and layouts to polished prototypes.",
+    "icon": "uiux",
+    "skills": [
+      "UI Design",
+      "UX Design",
+      "Wireframing",
+      "Prototyping",
+      "User Flow",
+      "Responsive Design"
+    ],
+    "tools": [
+      "Figma",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind CSS",
+      "React"
+    ]
+  },
+  "graphic": {
+    "title": "Graphic Design",
+    "description": "Creating visual materials such as posters, promotional graphics, social media content, product layouts, and other digital designs.",
+    "icon": "graphic",
+    "skills": [
+      "Graphic Design",
+      "Layout Design",
+      "Branding & Visual Identity",
+      "Photo Manipulation",
+      "Promotional Design"
+    ],
+    "tools": [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Canva",
+      "Capcut"
+    ]
+  },
+  "visual": {
+    "title": "Visual Design",
+    "description": "Working with typography, colors, layouts, imagery, and visual hierarchy to create designs that feel consistent and engaging.",
+    "icon": "visual",
+    "skills": [
+      "Layout Design",
+      "Typography",
+      "Color Theory",
+      "Branding & Visual Identity",
+      "Promotional Design",
+      "Responsive Design"
+    ],
+    "tools": [
+      "Figma",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Canva"
+    ]
+  },
+  "approach": [
+    {
+      "number": "01",
+      "title": "Understand",
+      "description": "I start by understanding the idea, purpose, audience, and problem that the design needs to solve."
+    },
+    {
+      "number": "02",
+      "title": "Plan",
+      "description": "I organize the content, structure, and user flow before moving into the visual design."
+    },
+    {
+      "number": "03",
+      "title": "Design",
+      "description": "I develop the visual direction through layouts, typography, colors, imagery, and interface elements."
+    },
+    {
+      "number": "04",
+      "title": "Refine",
+      "description": "I review the design, identify what can be improved, and refine the details to make the final result clearer and more polished."
+    },
+    {
+      "number": "05",
+      "title": "Deliver",
+      "description": "I prepare the final design and make sure it is ready for presentation, development, or actual use."
+    }
+  ]
+}

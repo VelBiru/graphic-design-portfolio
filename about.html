@@ -20,44 +20,21 @@
 			<p class="eyebrow">A little</p>
 			<h1>About <span>Me</span></h1>
 			<p class="about-introduction__copy">I&#8217;m a UI/UX and graphic designer who enjoys turning ideas into designs that are clean, purposeful, and easy to understand. I&#8217;m interested in both the visual and functional side of design&mdash;creating interfaces that feel intuitive while making sure every visual element has a reason to be there.</p>
+			<nav class="about-section-tabs" aria-label="About sections">
+				<button class="about-section-tabs__button is-active" type="button" aria-selected="true" aria-controls="about-panel-what" data-about-tab="what">What I Do</button>
+				<button class="about-section-tabs__button" type="button" aria-selected="false" aria-controls="about-panel-approach" data-about-tab="approach">Design Approach</button>
+				<button class="about-section-tabs__button" type="button" aria-selected="false" aria-controls="about-panel-experience" data-about-tab="experience">Experiences</button>
+				<button class="about-section-tabs__button" type="button" aria-selected="false" aria-controls="about-panel-philosophy" data-about-tab="philosophy">Philosophy</button>
+			</nav>
 		</div>
 
+		<div class="about-panel is-active" id="about-panel-what" data-about-panel="what">
 		<div class="about-services">
-			<div class="about-services__heading">
+			<div class="about-section-heading">
+                <h2>What I Do</h2>
 				<p class="eyebrow">Areas of focus</p>
-				<h2>What I Do</h2>
 			</div>
 			<div class="service-list">
-				<article class="service-card" data-service="uiux" tabindex="0">
-					<div class="service-card__icon" aria-hidden="true">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 4v5"></path><path d="M7 13h4M7 16h7"></path></svg>
-					</div>
-					<div>
-						<h3>UI/UX Design</h3>
-						<p>Designing clean and intuitive interfaces for websites and applications, from wireframes and layouts to polished prototypes.</p>
-						<button class="service-card__toggle" type="button" aria-expanded="false" aria-controls="service-details">Click to Show Skills <span aria-hidden="true">&rarr;</span></button>
-					</div>
-				</article>
-				<article class="service-card" data-service="graphic" tabindex="0">
-					<div class="service-card__icon" aria-hidden="true">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z"></path><path d="m4 7 8 4 8-4M12 11v10"></path><path d="m8 5 8 4"></path></svg>
-					</div>
-					<div>
-						<h3>Graphic Design</h3>
-						<p>Creating visual materials such as posters, promotional graphics, social media content, product layouts, and other digital designs.</p>
-						<button class="service-card__toggle" type="button" aria-expanded="false" aria-controls="service-details">Click to Show Skills <span aria-hidden="true">&rarr;</span></button>
-					</div>
-				</article>
-				<article class="service-card" data-service="visual" tabindex="0">
-					<div class="service-card__icon" aria-hidden="true">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17M3.5 12h17M6 6l12 12M18 6 6 18"></path></svg>
-					</div>
-					<div>
-						<h3>Visual Design</h3>
-						<p>Working with typography, colors, layouts, imagery, and visual hierarchy to create designs that feel consistent and engaging.</p>
-						<button class="service-card__toggle" type="button" aria-expanded="false" aria-controls="service-details">Click to Show Skills <span aria-hidden="true">&rarr;</span></button>
-					</div>
-				</article>
 			</div>
 			<div class="service-connectors" aria-hidden="true">
 				<span></span>
@@ -81,6 +58,31 @@
 				</div>
 			</div>
 		</div>
+		</div>
+
+		<section class="about-panel about-text-panel" id="about-panel-approach" data-about-panel="approach" hidden>
+			<div class="about-section-heading">
+				<h2>Design Approach</h2>
+				<p class="eyebrow">How I work</p>
+			</div>
+			<div class="approach-steps"></div>
+		</section>
+
+		<section class="about-panel about-text-panel" id="about-panel-experience" data-about-panel="experience" hidden>
+			<div class="about-section-heading">
+				<h2>Experiences</h2>
+				<p class="eyebrow">What I&apos;ve learned</p>
+			</div>
+			<p>ON PROGRESS</p>
+		</section>
+
+		<section class="about-panel about-text-panel" id="about-panel-philosophy" data-about-panel="philosophy" hidden>
+			<div class="about-section-heading">
+				<h2>Philosophy</h2>
+				<p class="eyebrow">What guides me</p>
+			</div>
+			<p>ON PROGRESS</p>
+		</section>
 	</main>
 	<script type="module" src="js/script.js"></script>
 </body>
