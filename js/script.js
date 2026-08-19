@@ -93,7 +93,7 @@ if (serviceDetails) {
 	const title = document.querySelector('#service-details-title');
 	const skills = document.querySelector('#service-skills');
 	const tools = document.querySelector('#service-tools');
-	const cards = document.querySelectorAll('.service-card');
+	const cards = [...document.querySelectorAll('.service-card')];
 	const toggles = document.querySelectorAll('.service-card__toggle');
 	const connectors = document.querySelectorAll('.service-connectors span');
 
@@ -105,7 +105,7 @@ if (serviceDetails) {
 		toggles.forEach((button) => {
 			button.setAttribute('aria-expanded', 'false');
 		});
-		document.querySelectorAll('.service-card').forEach((serviceCard) => {
+		cards.forEach((serviceCard) => {
 			serviceCard.classList.remove('is-active');
 		});
 		connectors.forEach((connector) => {
@@ -130,7 +130,7 @@ if (serviceDetails) {
 		}));
 		toggle.setAttribute('aria-expanded', 'true');
 		card.classList.add('is-active');
-		connectors[[...document.querySelectorAll('.service-card')].indexOf(card)].classList.add('is-active');
+		connectors[cards.indexOf(card)].classList.add('is-active');
 		serviceDetails.hidden = false;
 		serviceDetails.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 	};
