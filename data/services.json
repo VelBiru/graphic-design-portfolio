@@ -56,32 +56,5 @@
       "Adobe Illustrator",
       "Canva"
     ]
-  },
-  "approach": [
-    {
-      "number": "01",
-      "title": "Understand",
-      "description": "I start by understanding the idea, purpose, audience, and problem that the design needs to solve."
-    },
-    {
-      "number": "02",
-      "title": "Plan",
-      "description": "I organize the content, structure, and user flow before moving into the visual design."
-    },
-    {
-      "number": "03",
-      "title": "Design",
-      "description": "I develop the visual direction through layouts, typography, colors, imagery, and interface elements."
-    },
-    {
-      "number": "04",
-      "title": "Refine",
-      "description": "I review the design, identify what can be improved, and refine the details to make the final result clearer and more polished."
-    },
-    {
-      "number": "05",
-      "title": "Deliver",
-      "description": "I prepare the final design and make sure it is ready for presentation, development, or actual use."
-    }
-  ]
+  }
 }

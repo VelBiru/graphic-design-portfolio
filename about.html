@@ -16,16 +16,16 @@
 
 <body class="about-page">
     <nav class="page-navigation" aria-label="Page navigation">
-        <a href="index.html"><span aria-hidden="true">&larr;</span> Home</a>
-        <a href="works.html">Works <span aria-hidden="true">&rarr;</span></a>
+        <a href="index.html"><span aria-hidden="true">←</span> Home</a>
+        <a href="works.html">Works <span aria-hidden="true">→</span></a>
     </nav>
     <main class="about-layout">
         <div class="about-introduction">
             <p class="eyebrow">A little</p>
             <h1>About <span>Me</span></h1>
-            <p class="about-introduction__copy">I&#8217;m a UI/UX and graphic designer who enjoys turning ideas into
-                designs that are clean, purposeful, and easy to understand. I&#8217;m interested in both the visual and
-                functional side of design&mdash;creating interfaces that feel intuitive while making sure every visual
+            <p class="about-introduction__copy">I'm a UI/UX and graphic designer who enjoys turning ideas into
+                designs that are clean, purposeful, and easy to understand. I'm interested in both the visual and
+                functional side of design & creating interfaces that feel intuitive while making sure every visual
                 element has a reason to be there.</p>
             <nav class="about-section-tabs" aria-label="About sections">
                 <button class="about-section-tabs__button is-active" type="button" aria-selected="true"
@@ -33,9 +33,8 @@
                 <button class="about-section-tabs__button" type="button" aria-selected="false"
                     aria-controls="about-panel-approach" data-about-tab="approach">Design Approach</button>
                 <button class="about-section-tabs__button" type="button" aria-selected="false"
-                    aria-controls="about-panel-experience" data-about-tab="experience">Experiences</button>
-                <button class="about-section-tabs__button" type="button" aria-selected="false"
-                    aria-controls="about-panel-education" data-about-tab="education">Education</button>
+                    aria-controls="about-panel-experience" data-about-tab="experience">Journey
+                    </button>
                 <button class="about-section-tabs__button" type="button" aria-selected="false"
                     aria-controls="about-panel-philosophy" data-about-tab="philosophy">Philosophy</button>
             </nav>
@@ -83,31 +82,48 @@
 
         <section class="about-panel about-text-panel" id="about-panel-experience" data-about-panel="experience" hidden>
             <div class="about-section-heading">
-                <h2>Experiences</h2>
-                <p class="eyebrow">What I&apos;ve learned</p>
+                <h2>Journey</h2>
+                <p class="eyebrow">What I've learned</p>
             </div>
-            <div class="about-progress">
-                <div class="works-status__mark" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <div class="timeline-view">
+                <div class="timeline-grid">
+                    <article class="timeline-card">
+                        <button class="timeline-card__trigger" type="button" aria-expanded="false"
+                        data-timeline-key="education"
+                        aria-controls="timeline-details">
+                            <span class="timeline-card__label">Click to expand</span>
+                            <span class="timeline-card__content">
+                                <strong>Education</strong>
+                                <span>My Academic Journey</span>
+                            </span>
+                            <span class="timeline-card__icon" aria-hidden="true">+</span>
+                        </button>
+                    </article>
+                    <article class="timeline-card">
+                        <button class="timeline-card__trigger" type="button" aria-expanded="false"
+                        data-timeline-key="experience"
+                        aria-controls="timeline-details">
+                            <span class="timeline-card__label">Click to expand</span>
+                            <span class="timeline-card__content">
+                                <strong>Experience</strong>
+                                <span>Work &amp; Growth</span>
+                            </span>
+                            <span class="timeline-card__icon" aria-hidden="true">+</span>
+                        </button>
+                    </article>
                 </div>
-                <p>IN PROGRESS</p>
-            </div>
-        </section>
-
-        <section class="about-panel about-text-panel" id="about-panel-education" data-about-panel="education" hidden>
-            <div class="about-section-heading">
-                <h2>Education</h2>
-                <p class="eyebrow">What I&apos;ve studied</p>
-            </div>
-            <div class="about-progress">
-                <div class="works-status__mark" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="timeline-details" id="timeline-details" hidden>
+                    <div class="timeline-details__heading">
+                        <div>
+                            <h3 id="timeline-details-title">Education</h3>
+                            <p id="timeline-details-subtitle">My Academic Journey</p>
+                        </div>
+                        <button class="timeline-details__back" id="timeline-details-back" type="button">
+                            <span aria-hidden="true">&larr;</span> Back
+                        </button>
+                    </div>
+                    <div class="timeline-details__entries" id="timeline-details-entries"></div>
                 </div>
-                <p>IN PROGRESS</p>
             </div>
         </section>
 

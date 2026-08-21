@@ -1,0 +1,38 @@
+{
+  "education": {
+    "title": "Education",
+    "subtitle": "My Academic Journey",
+    "entries": [
+      {
+        "school": "Senior High School",
+        "year": "2018-2020",
+        "major": "Computer System Servicing (CSS)",
+        "description": "A foundation in computer systems, technical support, and practical problem-solving."
+      },
+      {
+        "school": "Junior High School",
+        "year": "2014-2018",
+        "major": "General Education",
+        "description": "Built the curiosity and discipline that led me toward technology and design."
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Work & Growth",
+    "entries": [
+      {
+        "school": "Design Practice",
+        "year": "2020-Present",
+        "major": "UI/UX and Graphic Design",
+        "description": "Developing clear visual systems and interfaces for digital and graphic design projects."
+      },
+      {
+        "school": "Independent Projects",
+        "year": "2018-Present",
+        "major": "Visual Design",
+        "description": "Growing through self-directed work, experimentation, and continuous refinement."
+      }
+    ]
+  }
+}

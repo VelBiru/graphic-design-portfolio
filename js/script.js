@@ -5,9 +5,37 @@ const serviceDetails = document.querySelector('#service-details');
 const aboutTabs = document.querySelectorAll('.about-section-tabs__button');
 const aboutPanels = document.querySelectorAll('.about-panel');
 
+const resetAboutPanelState = () => {
+	document.querySelectorAll('.approach-step__trigger').forEach((trigger) => {
+		const description = document.querySelector(`#${trigger.getAttribute('aria-controls')}`);
+
+		trigger.setAttribute('aria-expanded', 'false');
+		description.hidden = true;
+		trigger.closest('.approach-step').classList.remove('is-open');
+	});
+
+	document.querySelectorAll('.timeline-card__trigger').forEach((trigger) => {
+		trigger.setAttribute('aria-expanded', 'false');
+	});
+	document.querySelector('.timeline-grid')?.removeAttribute('hidden');
+	document.querySelector('#timeline-details')?.setAttribute('hidden', '');
+
+	serviceDetails?.setAttribute('hidden', '');
+	document.querySelectorAll('.service-card__toggle').forEach((toggle) => {
+		toggle.setAttribute('aria-expanded', 'false');
+	});
+	document.querySelectorAll('.service-card').forEach((card) => {
+		card.classList.remove('is-active');
+	});
+	document.querySelectorAll('.service-connectors span').forEach((connector) => {
+		connector.classList.remove('is-active');
+	});
+};
+
 aboutTabs.forEach((tab) => {
 	tab.addEventListener('click', () => {
 		const selectedPanel = document.querySelector(`#about-panel-${tab.dataset.aboutTab}`);
+		resetAboutPanelState();
 
 		aboutTabs.forEach((button) => {
 			button.classList.toggle('is-active', button === tab);
@@ -22,13 +50,20 @@ aboutTabs.forEach((tab) => {
 });
 
 if (serviceDetails) {
-	const serviceData = await fetch('data/about.json').then((response) => {
+	const loadData = async (path) => {
+		const response = await fetch(path);
+
 		if (!response.ok) {
-			throw new Error('Unable to load service data.');
+			throw new Error(`Unable to load ${path}.`);
 		}
 
 		return response.json();
-	});
+	};
+	const [serviceData, approachData, timelineData] = await Promise.all([
+		loadData('data/services.json'),
+		loadData('data/approach.json'),
+		loadData('data/timeline.json')
+	]);
 	const serviceList = document.querySelector('.service-list');
 	const approachSteps = document.querySelector('.approach-steps');
 	const iconTemplates = {
@@ -38,7 +73,6 @@ if (serviceDetails) {
 	};
 
 	serviceList.replaceChildren(...Object.entries(serviceData)
-		.filter(([key]) => key !== 'approach')
 		.map(([key, data]) => {
 			const card = document.createElement('article');
 			card.className = 'service-card';
@@ -57,7 +91,7 @@ if (serviceDetails) {
 			return card;
 		}));
 
-	approachSteps.replaceChildren(...serviceData.approach.map((step, index) => {
+	approachSteps.replaceChildren(...approachData.map((step, index) => {
 		const article = document.createElement('article');
 		article.className = 'approach-step';
 		article.innerHTML = `
@@ -69,7 +103,18 @@ if (serviceDetails) {
 		return article;
 	}));
 
-	document.querySelectorAll('.approach-step__trigger').forEach((trigger) => {
+	const approachTriggers = document.querySelectorAll('.approach-step__trigger');
+	const resetApproachSteps = () => {
+		approachTriggers.forEach((trigger) => {
+			const description = document.querySelector(`#${trigger.getAttribute('aria-controls')}`);
+
+			trigger.setAttribute('aria-expanded', 'false');
+			description.hidden = true;
+			trigger.closest('.approach-step').classList.remove('is-open');
+		});
+	};
+
+	approachTriggers.forEach((trigger) => {
 		trigger.addEventListener('click', () => {
 			const description = document.querySelector(`#${trigger.getAttribute('aria-controls')}`);
 			const isOpen = trigger.getAttribute('aria-expanded') === 'true';
@@ -89,6 +134,58 @@ if (serviceDetails) {
 			trigger.closest('.approach-step').classList.toggle('is-open', !isOpen);
 		});
 	});
+
+	approachSteps.addEventListener('focusout', (event) => {
+		if (!approachSteps.contains(event.relatedTarget)) {
+			resetApproachSteps();
+		}
+	});
+
+	const timelineGrid = document.querySelector('.timeline-grid');
+	const timelineDetails = document.querySelector('#timeline-details');
+	const timelineDetailsTitle = document.querySelector('#timeline-details-title');
+	const timelineDetailsSubtitle = document.querySelector('#timeline-details-subtitle');
+	const timelineDetailsEntries = document.querySelector('#timeline-details-entries');
+	const timelineDetailsBack = document.querySelector('#timeline-details-back');
+
+	if (timelineGrid && timelineDetails && timelineDetailsEntries) {
+		let selectedTimelineCard;
+
+		document.querySelectorAll('.timeline-card__trigger').forEach((trigger) => {
+			trigger.addEventListener('click', () => {
+				const selectedTimelineData = timelineData[trigger.dataset.timelineKey];
+				selectedTimelineCard = trigger.closest('.timeline-card');
+				timelineDetailsTitle.textContent = selectedTimelineData.title;
+				timelineDetailsSubtitle.textContent = selectedTimelineData.subtitle;
+				timelineDetailsEntries.replaceChildren(...selectedTimelineData.entries.map((entry) => {
+					const row = document.createElement('div');
+					row.className = 'timeline-details__entry';
+					row.innerHTML = `
+						<div class="timeline-details__meta">
+							<div class="timeline-details__school">
+								<strong>${entry.school}</strong>
+								<span class="timeline-details__year">${entry.year}</span>
+							</div>
+							<div class="timeline-details__major">${entry.major}</div>
+						</div>
+						<div class="timeline-details__marker" aria-hidden="true"><span></span></div>
+						<div class="timeline-details__description"><p>${entry.description}</p></div>
+					`;
+					return row;
+				}));
+				timelineGrid.hidden = true;
+				timelineDetails.hidden = false;
+				timelineDetailsBack.focus();
+			});
+		});
+
+		timelineDetailsBack.addEventListener('click', () => {
+			timelineDetails.hidden = true;
+			timelineGrid.hidden = false;
+			selectedTimelineCard?.querySelector('.timeline-card__trigger').setAttribute('aria-expanded', 'false');
+			selectedTimelineCard?.querySelector('.timeline-card__trigger').focus();
+		});
+	}
 
 	const title = document.querySelector('#service-details-title');
 	const skills = document.querySelector('#service-skills');
