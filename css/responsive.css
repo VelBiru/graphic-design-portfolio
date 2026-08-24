@@ -83,7 +83,7 @@
   }
 
   .portrait-frame {
-    order: 5;
+    order: 6;
     --portrait-offset: 0;
     align-self: center;
     justify-self: center;
@@ -104,6 +104,18 @@
   .location {
     right: .2rem;
     bottom: 1rem;
+    order: 4;
+  }
+
+  .hero__utility {
+    order: 5;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 1.75rem;
+  }
+
+  .social-links {
+    gap: .55rem;
   }
 
   .hero::before,
@@ -191,6 +203,10 @@
     margin-top: 2.5rem;
   }
 
+  .steps-list--quotes {
+    grid-template-columns: 1fr;
+  }
+
   .about-section-heading {
     align-items: flex-start;
     flex-direction: column;
@@ -215,7 +231,7 @@
     gap: 1.5rem;
   }
 
-  .approach-steps {
+  .steps-list {
     margin-top: 2rem;
   }
 
@@ -297,13 +313,13 @@
     border: 2px solid rgba(40, 99, 95, .50);
   }
 
-  .approach-step__trigger {
+  .step-item__trigger {
     grid-template-columns: 3.5rem 1fr auto;
     min-height: 3.8rem;
     padding-inline: 1rem;
   }
 
-  .approach-step__description {
+  .step-item__description {
     padding: 1rem;
   }
 

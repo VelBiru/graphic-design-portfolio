@@ -6,12 +6,12 @@ const aboutTabs = document.querySelectorAll('.about-section-tabs__button');
 const aboutPanels = document.querySelectorAll('.about-panel');
 
 const resetAboutPanelState = () => {
-	document.querySelectorAll('.approach-step__trigger').forEach((trigger) => {
+	document.querySelectorAll('.step-item__trigger[aria-controls]').forEach((trigger) => {
 		const description = document.querySelector(`#${trigger.getAttribute('aria-controls')}`);
 
 		trigger.setAttribute('aria-expanded', 'false');
 		description.hidden = true;
-		trigger.closest('.approach-step').classList.remove('is-open');
+		trigger.closest('.step-item').classList.remove('is-open');
 	});
 
 	document.querySelectorAll('.timeline-card__trigger').forEach((trigger) => {
@@ -60,13 +60,15 @@ if (serviceDetails) {
 
 		return response.json();
 	};
-	const [serviceData, approachData, timelineData] = await Promise.all([
+	const [serviceData, approachData, timelineData, philosophyData] = await Promise.all([
 		loadData('data/services.json'),
 		loadData('data/approach.json'),
-		loadData('data/timeline.json')
+		loadData('data/timeline.json'),
+		loadData('data/philosophy.json')
 	]);
 	const serviceList = document.querySelector('.service-list');
-	const approachSteps = document.querySelector('.approach-steps');
+	const approachSteps = document.querySelector('[data-steps-list="approach"]');
+	const philosophySteps = document.querySelector('#philosophy-steps');
 	const iconTemplates = {
 		uiux: '<rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 4v5"></path><path d="M7 13h4M7 16h7"></path>',
 		graphic: '<path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z"></path><path d="m4 7 8 4 8-4M12 11v10"></path><path d="m8 5 8 4"></path>',
@@ -92,55 +94,79 @@ if (serviceDetails) {
 			return card;
 		}));
 
-	approachSteps.replaceChildren(...approachData.map((step, index) => {
+	const renderSteps = (container, items, variant) => {
+		const isQuoteList = variant === 'quotes';
+		const itemClass = isQuoteList ? 'step-item step-item--quote' : 'step-item';
+
+		container.replaceChildren(...items.map((item, index) => {
 		const article = document.createElement('article');
-		article.className = 'approach-step';
-		article.innerHTML = `
-			<button class="approach-step__trigger" type="button" aria-expanded="false" aria-controls="approach-step-${index + 1}">
-				<span>${step.number}</span><strong>${step.title}</strong><span class="approach-step__icon" aria-hidden="true">+</span>
-			</button>
-			<div class="approach-step__description" id="approach-step-${index + 1}" hidden><p>${step.description}</p></div>
-		`;
+			const contentId = `${container.id || container.dataset.stepsList}-step-${index + 1}`;
+			article.className = itemClass;
+			article.innerHTML = isQuoteList ? `
+				<button class="step-item__trigger" type="button" aria-expanded="false" aria-controls="${contentId}">
+					<strong>${item.title}</strong><span class="step-item__icon" aria-hidden="true">+</span>
+				</button>
+				<div class="step-item__description" id="${contentId}" hidden>
+					<strong>${item.name}</strong><p class="step-item__quote">${item.qoute}</p>
+				</div>
+			` : `
+				<button class="step-item__trigger" type="button" aria-expanded="false" aria-controls="${contentId}">
+					<span>${item.number}</span><strong>${item.title}</strong><span class="step-item__icon" aria-hidden="true">+</span>
+				</button>
+				<div class="step-item__description" id="${contentId}" hidden><p>${item.description}</p></div>
+			`;
 		return article;
-	}));
+		}));
+	};
 
-	const approachTriggers = document.querySelectorAll('.approach-step__trigger');
-	const resetApproachSteps = () => {
-		approachTriggers.forEach((trigger) => {
-			const description = document.querySelector(`#${trigger.getAttribute('aria-controls')}`);
+	renderSteps(approachSteps, approachData, 'approach');
+	if (philosophySteps) renderSteps(philosophySteps, philosophyData, 'quotes');
 
-			trigger.setAttribute('aria-expanded', 'false');
-			description.hidden = true;
-			trigger.closest('.approach-step').classList.remove('is-open');
+	const setupAccordion = (container) => {
+		const triggers = container.querySelectorAll('.step-item__trigger[aria-controls]');
+
+		const reset = () => {
+			triggers.forEach((trigger) => {
+				const description = document.querySelector(`#${trigger.getAttribute('aria-controls')}`);
+
+				trigger.setAttribute('aria-expanded', 'false');
+				description.hidden = true;
+				trigger.closest('.step-item').classList.remove('is-open');
+			});
+		};
+
+		triggers.forEach((trigger) => {
+			trigger.addEventListener('click', () => {
+				const description = document.querySelector(`#${trigger.getAttribute('aria-controls')}`);
+				const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+				triggers.forEach((otherTrigger) => {
+					const otherDescription = document.querySelector(`#${otherTrigger.getAttribute('aria-controls')}`);
+
+					if (otherTrigger !== trigger) {
+						otherTrigger.setAttribute('aria-expanded', 'false');
+						otherDescription.hidden = true;
+						otherTrigger.closest('.step-item').classList.remove('is-open');
+					}
+				});
+
+				trigger.setAttribute('aria-expanded', String(!isOpen));
+				description.hidden = isOpen;
+				trigger.closest('.step-item').classList.toggle('is-open', !isOpen);
+			});
+		});
+
+		container.addEventListener('focusout', (event) => {
+			if (!container.contains(event.relatedTarget)) {
+				reset();
+			}
 		});
 	};
 
-	approachTriggers.forEach((trigger) => {
-		trigger.addEventListener('click', () => {
-			const description = document.querySelector(`#${trigger.getAttribute('aria-controls')}`);
-			const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-
-			document.querySelectorAll('.approach-step__trigger').forEach((otherTrigger) => {
-				const otherDescription = document.querySelector(`#${otherTrigger.getAttribute('aria-controls')}`);
-
-				if (otherTrigger !== trigger) {
-					otherTrigger.setAttribute('aria-expanded', 'false');
-					otherDescription.hidden = true;
-					otherTrigger.closest('.approach-step').classList.remove('is-open');
-				}
-			});
-
-			trigger.setAttribute('aria-expanded', String(!isOpen));
-			description.hidden = isOpen;
-			trigger.closest('.approach-step').classList.toggle('is-open', !isOpen);
-		});
-	});
-
-	approachSteps.addEventListener('focusout', (event) => {
-		if (!approachSteps.contains(event.relatedTarget)) {
-			resetApproachSteps();
-		}
-	});
+	setupAccordion(approachSteps);
+	if (philosophySteps) {
+		setupAccordion(philosophySteps);
+	}
 
 	const timelineGrid = document.querySelector('.timeline-grid');
 	const timelineDetails = document.querySelector('#timeline-details');
