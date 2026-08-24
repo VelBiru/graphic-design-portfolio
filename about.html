@@ -12,6 +12,8 @@
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body class="about-page">
@@ -31,10 +33,10 @@
                 <button class="about-section-tabs__button is-active" type="button" aria-selected="true"
                     aria-controls="about-panel-what" data-about-tab="what">What I Do</button>
                 <button class="about-section-tabs__button" type="button" aria-selected="false"
-                    aria-controls="about-panel-approach" data-about-tab="approach">Design Approach</button>
-                <button class="about-section-tabs__button" type="button" aria-selected="false"
                     aria-controls="about-panel-experience" data-about-tab="experience">Journey
-                    </button>
+                </button>
+                <button class="about-section-tabs__button" type="button" aria-selected="false"
+                    aria-controls="about-panel-approach" data-about-tab="approach">Design Approach</button>
                 <button class="about-section-tabs__button" type="button" aria-selected="false"
                     aria-controls="about-panel-philosophy" data-about-tab="philosophy">Philosophy</button>
             </nav>
@@ -89,8 +91,7 @@
                 <div class="timeline-grid">
                     <article class="timeline-card">
                         <button class="timeline-card__trigger" type="button" aria-expanded="false"
-                        data-timeline-key="education"
-                        aria-controls="timeline-details">
+                            data-timeline-key="education" aria-controls="timeline-details">
                             <span class="timeline-card__label">Click to expand</span>
                             <span class="timeline-card__content">
                                 <strong>Education</strong>
@@ -101,8 +102,7 @@
                     </article>
                     <article class="timeline-card">
                         <button class="timeline-card__trigger" type="button" aria-expanded="false"
-                        data-timeline-key="experience"
-                        aria-controls="timeline-details">
+                            data-timeline-key="experience" aria-controls="timeline-details">
                             <span class="timeline-card__label">Click to expand</span>
                             <span class="timeline-card__content">
                                 <strong>Experience</strong>
@@ -119,7 +119,8 @@
                             <p id="timeline-details-subtitle">My Academic Journey</p>
                         </div>
                         <button class="timeline-details__back" id="timeline-details-back" type="button">
-                            <span aria-hidden="true">&larr;</span> Back
+                            <span class="arrow" aria-hidden="true">←</span>
+                            <span aria-hidden="true">Back</span>
                         </button>
                     </div>
                     <div class="timeline-details__entries" id="timeline-details-entries"></div>
@@ -140,6 +141,9 @@
                 </div>
                 <p>IN PROGRESS</p>
             </div>
+            <!-- <blockquote class="about-philosophy__quote">
+                <p>Good design isn't just about making something look good. It's about making it work well, feel natural, and communicate clearly.</p>
+            </blockquote> -->
         </section>
     </main>
     <script type="module" src="js/script.js"></script>

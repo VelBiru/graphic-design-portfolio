@@ -4,16 +4,16 @@
     "subtitle": "My Academic Journey",
     "entries": [
       {
-        "school": "Senior High School",
-        "year": "2018-2020",
-        "major": "Computer System Servicing (CSS)",
-        "description": "A foundation in computer systems, technical support, and practical problem-solving."
+        "title": "College",
+        "year": "2022-2026 (4 years)",
+        "major": "Bachelor of Science in Information Technology (BSIT)",
+        "description": "During college, I improved my attention to detail, understanding of user interactions, and ability to handle different tasks. Combining my programming and UI/UX skills has strengthened my creativity and given me a solid foundation to keep growing."
       },
       {
-        "school": "Junior High School",
-        "year": "2014-2018",
-        "major": "General Education",
-        "description": "Built the curiosity and discipline that led me toward technology and design."
+        "title": "Senior High School",
+        "year": "2018-2020 (2 years)",
+        "major": "Computer System Servicing (CSS)",
+        "description": "Senior High School helped me improve my creativity while learning about hardware and graphic design. Through two years of Computer Systems Servicing, I strengthened my design skills and learned how to plan, create, and execute projects."
       }
     ]
   },
@@ -22,17 +22,30 @@
     "subtitle": "Work & Growth",
     "entries": [
       {
-        "school": "Design Practice",
-        "year": "2020-Present",
-        "major": "UI/UX and Graphic Design",
-        "description": "Developing clear visual systems and interfaces for digital and graphic design projects."
+        "title": "Freelancing",
+        "year": "2018-Present (8 years)",
+        "major": "Creative Graphic Designer",
+        "description": "I started my graphic design journey before 2018 and began taking small commissions after that. Those experiences helped me improve my skills, explore my creativity, and learn how to turn ideas into better results. I'm still learning and improving the way I create things along the way."
       },
       {
-        "school": "Independent Projects",
-        "year": "2018-Present",
-        "major": "Visual Design",
-        "description": "Growing through self-directed work, experimentation, and continuous refinement."
+        "title": "DOrSU DICT (OJT)",
+        "year": "February - June, 2026 (4+ months)",
+        "major": "Programmer / Web Developer",
+        "description": "During my last year in college, I completed a four-month OJT as a programmer, where I also worked on UI/UX design. It taught me that building a system isn't just about the backend, but also about making it easy for users to navigate and understand. This experience greatly improved my UI/UX skills."
+      },
+      {
+        "title": "Innovative Digital Mosaic Services (IDMS)",
+        "year": "June - July, 2024 (2 months)",
+        "major": "Programmer / Web Developer",
+        "description": "I worked full-time for a short period, but that experience taught me a lot about how an industrial printing company works—from tarps and DTFs to T-shirt layouts and measurements. It gave me practical knowledge I didn't have before and taught me one of the most important parts of design: making sure the design actually fits and has the visuals."
+      },
+      {
+        "title": "Customer Service Representative",
+        "year": "May - July, 2021 (2+ months)",
+        "major": "Outbound Call Center Agent",
+        "description": "I worked as a Customer Service Representative handling outbound clients. At first, I lacked confidence when talking to people, but the experience helped me become more comfortable. It improved my communication, confidence, choice of words, and ability to handle different situations."
       }
+
     ]
   }
 }

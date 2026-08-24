@@ -16,6 +16,7 @@ const resetAboutPanelState = () => {
 
 	document.querySelectorAll('.timeline-card__trigger').forEach((trigger) => {
 		trigger.setAttribute('aria-expanded', 'false');
+		trigger.closest('.timeline-card').classList.remove('is-open');
 	});
 	document.querySelector('.timeline-grid')?.removeAttribute('hidden');
 	document.querySelector('#timeline-details')?.setAttribute('hidden', '');
@@ -43,9 +44,9 @@ aboutTabs.forEach((tab) => {
 		});
 		aboutPanels.forEach((panel) => {
 			panel.hidden = panel !== selectedPanel;
-				panel.classList.remove('is-active');
+			panel.classList.remove('is-active');
 		});
-			selectedPanel.classList.add('is-active');
+		selectedPanel.classList.add('is-active');
 	});
 });
 
@@ -162,8 +163,8 @@ if (serviceDetails) {
 					row.className = 'timeline-details__entry';
 					row.innerHTML = `
 						<div class="timeline-details__meta">
-							<div class="timeline-details__school">
-								<strong>${entry.school}</strong>
+							<div class="timeline-details__entry-title">
+								<strong>${entry.title}</strong>
 								<span class="timeline-details__year">${entry.year}</span>
 							</div>
 							<div class="timeline-details__major">${entry.major}</div>
@@ -175,13 +176,17 @@ if (serviceDetails) {
 				}));
 				timelineGrid.hidden = true;
 				timelineDetails.hidden = false;
-				timelineDetailsBack.focus();
+				selectedTimelineCard.classList.add('is-open');
+				trigger.setAttribute('aria-expanded', 'true');
+				timelineDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				timelineDetailsBack.focus({ preventScroll: true });
 			});
 		});
 
 		timelineDetailsBack.addEventListener('click', () => {
 			timelineDetails.hidden = true;
 			timelineGrid.hidden = false;
+			selectedTimelineCard?.classList.remove('is-open');
 			selectedTimelineCard?.querySelector('.timeline-card__trigger').setAttribute('aria-expanded', 'false');
 			selectedTimelineCard?.querySelector('.timeline-card__trigger').focus();
 		});
