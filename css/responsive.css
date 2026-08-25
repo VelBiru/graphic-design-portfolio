@@ -287,15 +287,15 @@
   }
 
   .timeline-details__marker {
-    min-height: 1rem;
+    min-height: 2.5rem;
   }
 
   .timeline-details__marker::before {
     top: 0;
     bottom: auto;
     left: 50%;
-    width: 2px;
-    height: 1px;
+    width: 1px;
+    height: 100%;
     transform: translateX(-50%);
   }
 
