@@ -435,6 +435,43 @@ h1 span {
   text-transform: uppercase;
 }
 
+.works-status__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+  margin-top: 2rem;
+  padding: .9rem 1.5rem;
+  border: 1px solid rgba(23, 76, 76, .18);
+  border-radius: 999px;
+  background: var(--teal);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 14px 28px rgba(40, 99, 95, .2);
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+}
+
+.works-status__button span {
+  color: rgba(255, 255, 255, .92);
+  transition: transform 200ms ease;
+}
+
+.works-status__button:hover,
+.works-status__button:focus-visible {
+  background: var(--teal-deep);
+  box-shadow: 0 18px 32px rgba(23, 76, 76, .24);
+  transform: translateY(-2px);
+}
+
+.works-status__button:hover span,
+.works-status__button:focus-visible span {
+  transform: translateX(4px);
+}
+
 .about-layout {
   display: block;
   width: min(100%, 1440px);

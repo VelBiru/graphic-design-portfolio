@@ -47,6 +47,9 @@ aboutTabs.forEach((tab) => {
 			panel.classList.remove('is-active');
 		});
 		selectedPanel.classList.add('is-active');
+		selectedPanel.setAttribute('tabindex', '-1');
+		selectedPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		selectedPanel.focus({ preventScroll: true });
 	});
 });
 
