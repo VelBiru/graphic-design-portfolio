@@ -273,7 +273,7 @@
     align-items: center;
     padding: 1rem 0;
     border-right: 0;
-    border-bottom: 3px solid rgba(40, 99, 95, .50);
+    border-bottom: 1px solid rgba(40, 99, 95, .50);
   }
 
   .timeline-details__entry-title {
@@ -294,7 +294,7 @@
     top: 0;
     bottom: auto;
     left: 50%;
-    width: 2px;
+    width: 1px;
     height: 100%;
     transform: translateX(-50%);
   }
@@ -310,7 +310,8 @@
   .timeline-details__description {
     min-height: 8rem;
     padding: 1.25rem;
-    border: 2px solid rgba(40, 99, 95, .50);
+    border: 1px solid rgba(40, 99, 95, .50);
+    text-align: center;
   }
 
   .step-item__trigger {
