@@ -215,6 +215,10 @@
     margin-top: 2rem;
   }
 
+  .skills-tools {
+    grid-template-columns: 1fr;
+  }
+
   .timeline-grid {
     grid-template-columns: 1fr;
     gap: .8rem;
@@ -243,9 +247,11 @@
   }
 
   .timeline-details__entry:not(:last-child)::after {
-    right: 0;
-    left: auto;
-    transform: none;
+    left: 50%;
+    bottom: 1rem;
+    width: 45%;
+    height: 1px;
+    transform: translateX(-50%);
   }
 
   .timeline-details__meta {
@@ -293,6 +299,11 @@
     border: 0;
     text-align: center;
   }
+
+  .timeline-details__description p {
+    text-align: center;
+  }
+
 
   .step-item__trigger {
     grid-template-columns: 3.5rem 1fr auto;
