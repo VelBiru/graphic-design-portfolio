@@ -159,17 +159,6 @@
     flex: 1;
   }
 
-  .service-details {
-    grid-template-columns: 1fr;
-  }
-
-  .service-connectors {
-    display: none;
-  }
-
-  .service-connector {
-    display: none !important;
-  }
 }
 
 @media (max-width: 650px) {
@@ -222,22 +211,13 @@
     text-align: left;
   }
 
-  .service-card__toggle {
-    justify-content: flex-start;
-  }
-
-  .service-details__columns {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
   .steps-list {
     margin-top: 2rem;
   }
 
   .timeline-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: .8rem;
     margin-top: 2rem;
   }
 
@@ -251,7 +231,7 @@
   }
 
   .timeline-details {
-    padding: 1rem;
+    padding: 1.25rem;
   }
 
   .timeline-details__heading {
@@ -263,15 +243,15 @@
   }
 
   .timeline-details__entry:not(:last-child)::after {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;
+    left: auto;
+    transform: none;
   }
 
   .timeline-details__meta {
     flex-direction: column;
     align-items: center;
-    padding: 1rem 0;
+    padding: .5rem 0 1rem;
     border-right: 0;
     border-bottom: 1px solid rgba(40, 99, 95, .50);
   }
@@ -308,9 +288,9 @@
   }
 
   .timeline-details__description {
-    min-height: 8rem;
-    padding: 1.25rem;
-    border: 1px solid rgba(40, 99, 95, .50);
+    min-height: 0;
+    padding: .5rem 0 1.25rem;
+    border: 0;
     text-align: center;
   }
 
