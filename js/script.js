@@ -90,8 +90,7 @@ if (serviceList) {
 
 const toolIconTemplates = {
 	'Figma': '<circle cx="12" cy="5" r="2.5"></circle><circle cx="9.5" cy="9.5" r="2.5"></circle><circle cx="14.5" cy="9.5" r="2.5"></circle><circle cx="9.5" cy="14.5" r="2.5"></circle><path d="M12 17v2.5a2.5 2.5 0 1 1-2.5-2.5Z"></path>',
-	'HTML': '<path d="m5 4 2 16 5 1 5-1 2-16H5Z"></path><path d="M8.5 8h7M9 12h6.5M9.5 16h5"></path>',
-	'CSS': '<path d="m5 4 2 16 5 1 5-1 2-16H5Z"></path><path d="M8 8h8M8.5 12h7M9 16h6"></path>',
+	'HTML/CSS': '<path d="m5 4 2 16 5 1 5-1 2-16H5Z"></path><path d="M8 8h8M8.5 12h7M9 16h6"></path>',
 	'JavaScript': '<path d="M5 5h14v14H5z"></path><path d="M9 9v4.5a1.5 1.5 0 0 1-2 1.4M13 14.5c.5.5 1.1.7 1.8.7 1.7 0 2.2-1.7.7-2.4l-1.2-.5c-1.5-.6-1-2.4.6-2.4.8 0 1.4.3 1.8.8"></path>',
 	'Tailwind CSS': '<path d="M5 9c1.4-2.7 4.1-2.7 5.5 0 1.4 2.7 4.1 2.7 5.5 0M5 15c1.4-2.7 4.1-2.7 5.5 0 1.4 2.7 4.1 2.7 5.5 0"></path>',
 	'React': '<circle cx="12" cy="12" r="1.5"></circle><ellipse cx="12" cy="12" rx="8" ry="3.5"></ellipse><ellipse cx="12" cy="12" rx="8" ry="3.5" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="8" ry="3.5" transform="rotate(120 12 12)"></ellipse>',
@@ -114,7 +113,7 @@ if (toolsList) {
 	toolsList.replaceChildren(...toolsSkillsData.tools.map((tool) => {
 		const item = document.createElement('div');
 		item.className = 'skills-tools__item skills-tools__item--tool';
-		item.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${toolIconTemplates[tool]}</svg><span>${tool}</span>`;
+		item.innerHTML = `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${toolIconTemplates[tool]}</svg><span>${tool}</span>`;
 		return item;
 	}));
 }
