@@ -1,0 +1,74 @@
+[
+  {
+    "id": "project-1",
+    "title": "FinTech Mobile Banking",
+    "category": "uiux",
+    "categoryName": "UI/UX Design",
+    "description": "Streamlined personal wealth management experience with intuitive transactional flows.",
+    "tag": "Mobile App",
+    "color": "teal"
+  },
+  {
+    "id": "project-2",
+    "title": "Minimalist Brand Identity",
+    "category": "graphic",
+    "categoryName": "Graphic Design",
+    "description": "Comprehensive visual identity and editorial guidelines for an architectural studio.",
+    "tag": "Branding",
+    "color": "slate"
+  },
+  {
+    "id": "project-3",
+    "title": "E-Commerce Design System",
+    "category": "uiux",
+    "categoryName": "UI/UX Design",
+    "description": "Scalable design tokens, component library, and responsive interface templates.",
+    "tag": "Web App",
+    "color": "teal"
+  },
+  {
+    "id": "project-4",
+    "title": "Typography Exhibition Poster",
+    "category": "graphic",
+    "categoryName": "Graphic Design",
+    "description": "Experimental typographic poster exploring contrast, grid systems, and negative space.",
+    "tag": "Print / Editorial",
+    "color": "sage"
+  },
+  {
+    "id": "project-5",
+    "title": "Healthcare Dashboard",
+    "category": "uiux",
+    "categoryName": "UI/UX Design",
+    "description": "Data visualization suite empowering clinicians to monitor patient metrics seamlessly.",
+    "tag": "SaaS Platform",
+    "color": "teal"
+  },
+  {
+    "id": "project-6",
+    "title": "Packaging & Label Series",
+    "category": "graphic",
+    "categoryName": "Graphic Design",
+    "description": "Sustainable botanical product packaging with bespoke hand-drawn iconography.",
+    "tag": "Packaging",
+    "color": "sand"
+  },
+  {
+    "id": "project-7",
+    "title": "Creative Agency Landing Page",
+    "category": "uiux",
+    "categoryName": "UI/UX Design",
+    "description": "High-impact storytelling landing page featuring dynamic grid layouts and micro-interactions.",
+    "tag": "Website",
+    "color": "teal"
+  },
+  {
+    "id": "project-8",
+    "title": "Geometric Art Direction",
+    "category": "graphic",
+    "categoryName": "Graphic Design",
+    "description": "Series of vector illustrations and digital assets exploring structured geometry and form.",
+    "tag": "Visual Art",
+    "color": "slate"
+  }
+]

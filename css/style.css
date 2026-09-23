@@ -472,6 +472,273 @@ h1 span {
   transform: translateX(4px);
 }
 
+/* Works Page Layout */
+.works-layout {
+  display: block;
+  width: min(100%, 1400px);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 6vw, 6rem) clamp(4rem, 6vw, 6rem);
+  animation: fade-in 400ms ease-out both;
+}
+
+.works-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: clamp(1rem, 2.5vw, 2.5rem) auto clamp(2.5rem, 4vw, 4rem);
+  max-width: 780px;
+  animation: fade-in 1s ease-out both;
+}
+
+.works-header__title {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3.2rem, 6.5vw, 5.8rem);
+  font-weight: 700;
+  letter-spacing: -.05em;
+  line-height: 1;
+  animation: fade-in 1s ease-out both;
+}
+
+.works-header__copy {
+  max-width: 660px;
+  margin: 1.35rem 0 0;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.75;
+  animation: fade-in 1s ease-out both;
+}
+
+/* Works Folder Tabs Bar */
+.works-tabs-bar {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 2px solid rgba(41, 46, 45, .18);
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+}
+
+.works-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  position: relative;
+  bottom: -2px;
+}
+
+.works-tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .85rem clamp(1.2rem, 2.2vw, 2.2rem);
+  border: 2px solid transparent;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .88rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease;
+}
+
+/* Folder tab distinct shades matching wireframe */
+.works-tab:nth-child(1) {
+  background: #626a67;
+  color: #fff;
+  border-color: #626a67;
+}
+
+.works-tab:nth-child(2) {
+  background: #a8b3af;
+  color: var(--ink);
+  border-color: #a8b3af;
+}
+
+.works-tab:nth-child(3) {
+  background: #cbd4d0;
+  color: var(--ink);
+  border-color: #cbd4d0;
+}
+
+/* Active tab highlight */
+.works-tab.is-active {
+  background: var(--teal);
+  color: #f4eee0 !important;
+  border-color: var(--teal) !important;
+  box-shadow: 0 -2px 10px rgba(41, 46, 45, .1);
+  z-index: 2;
+}
+
+.works-tab:hover:not(.is-active) {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+  transform: translateY(-2px);
+}
+
+.works-tab:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+/* Works Grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2vw, 2rem);
+  width: 100%;
+}
+
+/* Works Card */
+.works-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background: rgba(255, 252, 244, .72);
+  border: 1px solid rgba(40, 99, 95, .2);
+  box-shadow: 0 4px 18px rgba(40, 99, 95, .06);
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  animation: reveal-left 600ms cubic-bezier(.22, 1, .36, 1) both;
+  transition: transform 260ms cubic-bezier(.22, 1, .36, 1), box-shadow 260ms cubic-bezier(.22, 1, .36, 1), border-color 220ms ease;
+}
+
+.works-card:hover,
+.works-card:focus-visible {
+  border-color: var(--teal);
+  box-shadow: 0 16px 36px rgba(40, 99, 95, .16);
+  transform: translateY(-6px);
+}
+
+.works-card.is-hidden {
+  display: none;
+}
+
+/* Card Media / Placeholder */
+.works-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.15;
+  background: #d8dedb;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(40, 99, 95, .12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.works-card__placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .4);
+  border: 1px dashed rgba(40, 99, 95, .25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 300ms ease, background-color 300ms ease;
+}
+
+.works-card:hover .works-card__placeholder {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, .6);
+}
+
+/* Tasteful wireframe preview elements */
+.works-card__wireframe-preview {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  width: 72%;
+}
+
+.works-card__wireframe-preview .preview-bar {
+  display: block;
+  width: 45%;
+  height: 7px;
+  border-radius: 4px;
+  background: rgba(40, 99, 95, .32);
+}
+
+.works-card__wireframe-preview .preview-box {
+  display: block;
+  width: 100%;
+  height: 48px;
+  border-radius: 6px;
+  background: rgba(40, 99, 95, .15);
+}
+
+.works-card__wireframe-preview .preview-lines {
+  display: block;
+  width: 80%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(40, 99, 95, .22);
+}
+
+/* Card Info */
+.works-card__info {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.35rem 1.4rem;
+  flex: 1;
+}
+
+.works-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  margin-bottom: .6rem;
+}
+
+.works-card__tag {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: rgba(40, 99, 95, .1);
+  padding: .25rem .55rem;
+  border-radius: 999px;
+}
+
+.works-card__category {
+  font-size: .72rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.works-card__title {
+  margin: 0 0 .5rem;
+  color: var(--ink);
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.works-card__desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .about-layout {
   display: block;
   width: min(100%, 1440px);
@@ -663,7 +930,7 @@ h1 span {
   background: var(--teal);
 }
 
-.about-philosophy__separator + .steps-list--quotes {
+.about-philosophy__separator+.steps-list--quotes {
   margin-top: 1.25rem;
 }
 
@@ -675,7 +942,7 @@ h1 span {
   text-align: center;
 }
 
-.about-philosophy__caption + .steps-list--quotes {
+.about-philosophy__caption+.steps-list--quotes {
   margin-top: 1rem;
 }
 
@@ -1253,4 +1520,3 @@ h1 span {
   display: inline-block;
   vertical-align: middle;
 }
-

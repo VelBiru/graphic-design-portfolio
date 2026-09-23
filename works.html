@@ -1,33 +1,227 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Aville Malintad's design work is currently being curated.">
+	<meta name="description"
+		content="Explore selected design works, UI/UX systems, and graphic design projects by Aville Malintad.">
 	<title>Works | Aville Malintad</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@500;600;700&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/animations.css">
 	<link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body class="works-page">
 	<nav class="page-navigation" aria-label="Page navigation">
 		<a href="about.html"><span aria-hidden="true">←</span> About</a>
-        <a href="index.html">Home <span aria-hidden="true">→</span></a>
+		<a href="index.html">Home <span aria-hidden="true">→</span></a>
 	</nav>
-	<main class="works-status">
-		<div class="works-status__mark" aria-hidden="true">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-		<p class="eyebrow">Portfolio update</p>
-		<h1>Works in <span>Progress</span></h1>
-		<p class="works-status__copy">I&apos;m currently curating and refining my design work. This space will be updated soon with selected UI/UX, graphic, and visual design projects.</p>
-		<p class="works-status__note">Come back soon.</p>
-		<a class="works-status__button" href="https://www.behance.net/AvilleDesigns2024" target="_blank" rel="noreferrer">View Behance <span aria-hidden="true">→</span></a>
+
+	<main class="works-layout">
+		<header class="works-header">
+			<p class="eyebrow">My Personal</p>
+			<h1 class="works-header__title">Works</h1>
+			<p class="works-header__copy">Explore a curated collection of UI/UX, graphic, and visual design projects.
+				Balancing thoughtful typography, functional systems, and deliberate aesthetic craft.</p>
+		</header>
+
+		<section class="works-section" aria-label="Portfolio projects">
+			<div class="works-tabs-bar">
+				<div class="works-tabs" role="tablist" aria-label="Filter works by category">
+					<button class="works-tab is-active" type="button" role="tab" id="tab-all" aria-selected="true"
+						aria-controls="works-grid" data-category="all">
+						<span>All</span>
+					</button>
+					<button class="works-tab" type="button" role="tab" id="tab-uiux" aria-selected="false"
+						aria-controls="works-grid" data-category="uiux">
+						<span>UI/UX</span>
+					</button>
+					<button class="works-tab" type="button" role="tab" id="tab-graphic" aria-selected="false"
+						aria-controls="works-grid" data-category="graphic">
+						<span>Graphic Design</span>
+					</button>
+				</div>
+			</div>
+
+			<div class="works-grid" id="works-grid" role="tabpanel" aria-labelledby="tab-all">
+				<article class="works-card works-card--teal" data-category="uiux" data-id="project-1" tabindex="0">
+					<div class="works-card__media">
+						<div class="works-card__placeholder" aria-hidden="true">
+							<div class="works-card__wireframe-preview">
+								<span class="preview-bar"></span>
+								<span class="preview-box"></span>
+								<span class="preview-lines"></span>
+							</div>
+						</div>
+					</div>
+					<div class="works-card__info">
+						<div class="works-card__header">
+							<span class="works-card__tag">Mobile App</span>
+							<span class="works-card__category">UI/UX Design</span>
+						</div>
+						<h2 class="works-card__title">FinTech Mobile Banking</h2>
+						<p class="works-card__desc">Streamlined personal wealth management experience with intuitive
+							transactional flows.</p>
+					</div>
+				</article>
+
+				<article class="works-card works-card--slate" data-category="graphic" data-id="project-2" tabindex="0">
+					<div class="works-card__media">
+						<div class="works-card__placeholder" aria-hidden="true">
+							<div class="works-card__wireframe-preview">
+								<span class="preview-bar"></span>
+								<span class="preview-box"></span>
+								<span class="preview-lines"></span>
+							</div>
+						</div>
+					</div>
+					<div class="works-card__info">
+						<div class="works-card__header">
+							<span class="works-card__tag">Branding</span>
+							<span class="works-card__category">Graphic Design</span>
+						</div>
+						<h2 class="works-card__title">Minimalist Brand Identity</h2>
+						<p class="works-card__desc">Comprehensive visual identity and editorial guidelines for an
+							architectural studio.</p>
+					</div>
+				</article>
+
+				<article class="works-card works-card--teal" data-category="uiux" data-id="project-3" tabindex="0">
+					<div class="works-card__media">
+						<div class="works-card__placeholder" aria-hidden="true">
+							<div class="works-card__wireframe-preview">
+								<span class="preview-bar"></span>
+								<span class="preview-box"></span>
+								<span class="preview-lines"></span>
+							</div>
+						</div>
+					</div>
+					<div class="works-card__info">
+						<div class="works-card__header">
+							<span class="works-card__tag">Web App</span>
+							<span class="works-card__category">UI/UX Design</span>
+						</div>
+						<h2 class="works-card__title">E-Commerce Design System</h2>
+						<p class="works-card__desc">Scalable design tokens, component library, and responsive interface
+							templates.</p>
+					</div>
+				</article>
+
+				<article class="works-card works-card--sage" data-category="graphic" data-id="project-4" tabindex="0">
+					<div class="works-card__media">
+						<div class="works-card__placeholder" aria-hidden="true">
+							<div class="works-card__wireframe-preview">
+								<span class="preview-bar"></span>
+								<span class="preview-box"></span>
+								<span class="preview-lines"></span>
+							</div>
+						</div>
+					</div>
+					<div class="works-card__info">
+						<div class="works-card__header">
+							<span class="works-card__tag">Print / Editorial</span>
+							<span class="works-card__category">Graphic Design</span>
+						</div>
+						<h2 class="works-card__title">Typography Exhibition Poster</h2>
+						<p class="works-card__desc">Experimental typographic poster exploring contrast, grid systems,
+							and negative space.</p>
+					</div>
+				</article>
+
+				<article class="works-card works-card--teal" data-category="uiux" data-id="project-5" tabindex="0">
+					<div class="works-card__media">
+						<div class="works-card__placeholder" aria-hidden="true">
+							<div class="works-card__wireframe-preview">
+								<span class="preview-bar"></span>
+								<span class="preview-box"></span>
+								<span class="preview-lines"></span>
+							</div>
+						</div>
+					</div>
+					<div class="works-card__info">
+						<div class="works-card__header">
+							<span class="works-card__tag">SaaS Platform</span>
+							<span class="works-card__category">UI/UX Design</span>
+						</div>
+						<h2 class="works-card__title">Healthcare Dashboard</h2>
+						<p class="works-card__desc">Data visualization suite empowering clinicians to monitor patient
+							metrics seamlessly.</p>
+					</div>
+				</article>
+
+				<article class="works-card works-card--sand" data-category="graphic" data-id="project-6" tabindex="0">
+					<div class="works-card__media">
+						<div class="works-card__placeholder" aria-hidden="true">
+							<div class="works-card__wireframe-preview">
+								<span class="preview-bar"></span>
+								<span class="preview-box"></span>
+								<span class="preview-lines"></span>
+							</div>
+						</div>
+					</div>
+					<div class="works-card__info">
+						<div class="works-card__header">
+							<span class="works-card__tag">Packaging</span>
+							<span class="works-card__category">Graphic Design</span>
+						</div>
+						<h2 class="works-card__title">Packaging &amp; Label Series</h2>
+						<p class="works-card__desc">Sustainable botanical product packaging with bespoke hand-drawn
+							iconography.</p>
+					</div>
+				</article>
+
+				<article class="works-card works-card--teal" data-category="uiux" data-id="project-7" tabindex="0">
+					<div class="works-card__media">
+						<div class="works-card__placeholder" aria-hidden="true">
+							<div class="works-card__wireframe-preview">
+								<span class="preview-bar"></span>
+								<span class="preview-box"></span>
+								<span class="preview-lines"></span>
+							</div>
+						</div>
+					</div>
+					<div class="works-card__info">
+						<div class="works-card__header">
+							<span class="works-card__tag">Website</span>
+							<span class="works-card__category">UI/UX Design</span>
+						</div>
+						<h2 class="works-card__title">Creative Agency Landing Page</h2>
+						<p class="works-card__desc">High-impact storytelling landing page featuring dynamic grid layouts
+							and micro-interactions.</p>
+					</div>
+				</article>
+
+				<article class="works-card works-card--slate" data-category="graphic" data-id="project-8" tabindex="0">
+					<div class="works-card__media">
+						<div class="works-card__placeholder" aria-hidden="true">
+							<div class="works-card__wireframe-preview">
+								<span class="preview-bar"></span>
+								<span class="preview-box"></span>
+								<span class="preview-lines"></span>
+							</div>
+						</div>
+					</div>
+					<div class="works-card__info">
+						<div class="works-card__header">
+							<span class="works-card__tag">Visual Art</span>
+							<span class="works-card__category">Graphic Design</span>
+						</div>
+						<h2 class="works-card__title">Geometric Art Direction</h2>
+						<p class="works-card__desc">Series of vector illustrations and digital assets exploring
+							structured geometry and form.</p>
+					</div>
+				</article>
+			</div>
+		</section>
 	</main>
+
+	<script type="module" src="js/works.js"></script>
 </body>
+
 </html>
