@@ -5,8 +5,20 @@
     "category": "uiux",
     "categoryName": "UI/UX Design",
     "description": "Streamlined personal wealth management experience with intuitive transactional flows.",
+    "fullDescription": "A comprehensive end-to-end mobile banking application tailored for next-generation investors. The project focuses on simplifying complex financial transactions, providing clear real-time budget insights, and delivering a secure yet frictionless authentication process.",
     "tag": "Mobile App",
-    "color": "teal"
+    "role": "UI/UX Designer & Prototyper",
+    "year": "2024",
+    "techStack": ["Figma", "Design Systems", "Prototyping", "User Research", "Wireframing"],
+    "features": [
+      "Custom analytics dashboard with interactive spending breakdowns",
+      "Instant peer-to-peer money transfers with biometric verification",
+      "Dark and light mode with high-contrast accessibility compliance",
+      "Comprehensive micro-interaction prototype for developer handoff"
+    ],
+    "color": "teal",
+    "liveUrl": "#",
+    "githubUrl": "#"
   },
   {
     "id": "project-2",
@@ -14,17 +26,41 @@
     "category": "graphic",
     "categoryName": "Graphic Design",
     "description": "Comprehensive visual identity and editorial guidelines for an architectural studio.",
+    "fullDescription": "Complete brand identity system developed for a boutique architectural and interior design firm. The identity merges brutalist geometric structures with soft editorial typography to reflect their spatial philosophy.",
     "tag": "Branding",
-    "color": "slate"
+    "role": "Brand Designer & Visual Strategist",
+    "year": "2024",
+    "techStack": ["Adobe Illustrator", "Adobe Photoshop", "InDesign", "Typography"],
+    "features": [
+      "Modular responsive logo system for digital and print collateral",
+      "Complete 48-page brand guideline handbook and grid specifications",
+      "Embossed business cards and tactile stationery packaging",
+      "Social media design kit and custom vector iconography"
+    ],
+    "color": "slate",
+    "liveUrl": "#",
+    "githubUrl": "#"
   },
   {
     "id": "project-3",
-    "title": "E-Commerce Design System",
-    "category": "uiux",
-    "categoryName": "UI/UX Design",
-    "description": "Scalable design tokens, component library, and responsive interface templates.",
-    "tag": "Web App",
-    "color": "teal"
+    "title": "E-Commerce Web Application",
+    "category": "webdev",
+    "categoryName": "Web Development",
+    "description": "High-performance full-stack e-commerce storefront with real-time cart and payment gateway.",
+    "fullDescription": "A lightning-fast modern e-commerce platform built with clean responsive architecture. Featuring dynamic product filtering, seamless state management, and optimized SEO performance score of 98+ on Lighthouse.",
+    "tag": "Full-Stack",
+    "role": "Full-Stack Web Developer",
+    "year": "2024",
+    "techStack": ["JavaScript", "HTML5/CSS3", "React", "Node.js", "REST APIs"],
+    "features": [
+      "Dynamic client-side filtering and instant search indexing",
+      "Persistent state shopping cart with local storage synchronization",
+      "Fully responsive layout optimized across mobile, tablet, and ultra-wide screens",
+      "Modular component architecture with strict semantic HTML standards"
+    ],
+    "color": "teal",
+    "liveUrl": "#",
+    "githubUrl": "#"
   },
   {
     "id": "project-4",
@@ -32,17 +68,41 @@
     "category": "graphic",
     "categoryName": "Graphic Design",
     "description": "Experimental typographic poster exploring contrast, grid systems, and negative space.",
+    "fullDescription": "A creative exploration in contemporary Swiss typography and editorial poster design. Created for an international design symposium celebrating experimental letterforms and kinetic typography.",
     "tag": "Print / Editorial",
-    "color": "sage"
+    "role": "Graphic & Poster Designer",
+    "year": "2023",
+    "techStack": ["Adobe Illustrator", "Photoshop", "Editorial Layout", "Print Production"],
+    "features": [
+      "Deconstructed grid layout testing visual tension and hierarchy",
+      "Custom geometric display typeface accents",
+      "Optimized for large-format offset and screen-printing techniques",
+      "Featured in university graphic design exhibition showcase"
+    ],
+    "color": "sage",
+    "liveUrl": "#",
+    "githubUrl": "#"
   },
   {
     "id": "project-5",
-    "title": "Healthcare Dashboard",
+    "title": "Healthcare Analytics Dashboard",
     "category": "uiux",
     "categoryName": "UI/UX Design",
     "description": "Data visualization suite empowering clinicians to monitor patient metrics seamlessly.",
+    "fullDescription": "An intuitive medical analytics suite engineered for clinical environments. Streamlines critical patient vitals, telemetry charts, and automated threshold alerts into an uncluttered interface.",
     "tag": "SaaS Platform",
-    "color": "teal"
+    "role": "Lead Product Designer",
+    "year": "2024",
+    "techStack": ["Figma", "Information Architecture", "Data Viz", "Design Systems"],
+    "features": [
+      "Dynamic multi-parameter telemetry charts and real-time alerts",
+      "Role-based permission view customized for nurses and senior physicians",
+      "Strict WCAG 2.1 AAA color contrast compliance for clinical screens",
+      "Interactive component library with 120+ reusable UI tokens"
+    ],
+    "color": "teal",
+    "liveUrl": "#",
+    "githubUrl": "#"
   },
   {
     "id": "project-6",
@@ -50,17 +110,41 @@
     "category": "graphic",
     "categoryName": "Graphic Design",
     "description": "Sustainable botanical product packaging with bespoke hand-drawn iconography.",
+    "fullDescription": "Organic apothecary skincare packaging range developed with sustainable materials in mind. Each product label uses bespoke line illustrations and textured earthy color schemes to highlight organic sourcing.",
     "tag": "Packaging",
-    "color": "sand"
+    "role": "Visual & Packaging Designer",
+    "year": "2023",
+    "techStack": ["Adobe Illustrator", "Packaging Dielines", "3D Mockups", "Print Specs"],
+    "features": [
+      "Custom vector botanical illustrations for 6 unique product lines",
+      "Print-ready dielines with metallic foil stamping instructions",
+      "Cohesive typographic hierarchy compliant with cosmetic regulation standards",
+      "Eco-friendly substrate specifications (recycled kraft paper and soy inks)"
+    ],
+    "color": "sand",
+    "liveUrl": "#",
+    "githubUrl": "#"
   },
   {
     "id": "project-7",
-    "title": "Creative Agency Landing Page",
-    "category": "uiux",
-    "categoryName": "UI/UX Design",
-    "description": "High-impact storytelling landing page featuring dynamic grid layouts and micro-interactions.",
-    "tag": "Website",
-    "color": "teal"
+    "title": "Creative Studio Web Platform",
+    "category": "webdev",
+    "categoryName": "Web Development",
+    "description": "Interactive storytelling website with custom CSS animations and accessible architecture.",
+    "fullDescription": "Custom portfolio platform built for an international multidisciplinary design agency. Engineered from scratch with vanilla CSS and performant JavaScript to deliver fluid 60fps transitions without bloat.",
+    "tag": "Front-End",
+    "role": "Front-End Developer & UI Engineer",
+    "year": "2024",
+    "techStack": ["Vanilla JavaScript", "Modern CSS", "HTML5", "Intersection Observer"],
+    "features": [
+      "Zero-dependency lightweight vanilla JavaScript architecture",
+      "Smooth hardware-accelerated scroll animations and page transitions",
+      "Responsive fluid typography using modern CSS clamp() functions",
+      "100% keyboard and screen reader accessible navigational structure"
+    ],
+    "color": "teal",
+    "liveUrl": "#",
+    "githubUrl": "#"
   },
   {
     "id": "project-8",
@@ -68,7 +152,19 @@
     "category": "graphic",
     "categoryName": "Graphic Design",
     "description": "Series of vector illustrations and digital assets exploring structured geometry and form.",
+    "fullDescription": "An ongoing visual experiment exploring brutalist architecture, Bauhaus geometry, and vibrant duotone palettes. Published as digital wallpapers, apparel prints, and editorial header illustrations.",
     "tag": "Visual Art",
-    "color": "slate"
+    "role": "Digital Illustrator & Art Director",
+    "year": "2024",
+    "techStack": ["Vector Art", "Adobe Illustrator", "Digital Painting", "Color Theory"],
+    "features": [
+      "Series of 12 scalable modular vector artwork compositions",
+      "Curated duotone color palettes optimized for digital displays and OLED screens",
+      "Harmonious balance of sharp angles and soft ambient gradients",
+      "Multi-format export presets for web, mobile, and merchandise"
+    ],
+    "color": "slate",
+    "liveUrl": "#",
+    "githubUrl": "#"
   }
 ]

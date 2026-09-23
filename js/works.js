@@ -1,5 +1,11 @@
 const worksGrid = document.querySelector('#works-grid');
 const tabs = document.querySelectorAll('.works-tab');
+const modalBackdrop = document.querySelector('#works-modal-backdrop');
+const modalClose = document.querySelector('#modal-close');
+const modalContent = document.querySelector('#modal-content');
+
+let projectsData = [];
+let lastFocusedCard = null;
 
 const loadWorks = async () => {
   try {
@@ -14,6 +20,111 @@ const loadWorks = async () => {
   }
 };
 
+const openModal = (project, sourceCard) => {
+  if (!modalBackdrop || !modalContent) return;
+
+  lastFocusedCard = sourceCard;
+
+  const techBadges = (project.techStack || [])
+    .map((tech) => `<span class="works-modal__tech-item">${tech}</span>`)
+    .join('');
+
+  const featureItems = (project.features || [])
+    .map((feature) => `<li>${feature}</li>`)
+    .join('');
+
+  modalContent.innerHTML = `
+    <div class="works-modal__banner" aria-hidden="true">
+      <div class="works-modal__banner-placeholder">
+        <span class="preview-bar" style="width: 50%;"></span>
+        <span class="preview-box" style="height: 54px;"></span>
+        <span class="preview-lines" style="width: 85%;"></span>
+      </div>
+    </div>
+
+    <div class="works-modal__meta">
+      <span class="works-modal__badge">${project.categoryName || 'Design'}</span>
+      <span class="works-modal__tag">${project.tag || ''}</span>
+      ${project.year ? `<span class="works-modal__dot">&#8226;</span><span class="works-modal__tag">${project.year}</span>` : ''}
+      ${project.role ? `<span class="works-modal__dot">&#8226;</span><span class="works-modal__tag">${project.role}</span>` : ''}
+    </div>
+
+    <h2 class="works-modal__title" id="modal-title">${project.title}</h2>
+    
+    <p class="works-modal__description">
+      ${project.fullDescription || project.description}
+    </p>
+
+    ${
+      project.techStack && project.techStack.length
+        ? `
+      <div class="works-modal__section">
+        <h3 class="works-modal__section-title">Tools &amp; Technologies</h3>
+        <div class="works-modal__tech-list">${techBadges}</div>
+      </div>
+    `
+        : ''
+    }
+
+    ${
+      project.features && project.features.length
+        ? `
+      <div class="works-modal__section">
+        <h3 class="works-modal__section-title">Key Highlights &amp; Scope</h3>
+        <ul class="works-modal__features">${featureItems}</ul>
+      </div>
+    `
+        : ''
+    }
+
+    <div class="works-modal__actions">
+      <a href="${project.liveUrl || '#'}" class="works-modal__btn works-modal__btn--primary" target="_blank" rel="noopener noreferrer">
+        Live Demo <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a href="${project.githubUrl || '#'}" class="works-modal__btn works-modal__btn--secondary" target="_blank" rel="noopener noreferrer">
+        Project Details <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  `;
+
+  modalBackdrop.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+  modalClose?.focus();
+};
+
+const closeModal = () => {
+  if (!modalBackdrop || modalBackdrop.hasAttribute('hidden')) return;
+
+  modalBackdrop.setAttribute('hidden', '');
+  document.body.style.overflow = '';
+
+  if (lastFocusedCard) {
+    lastFocusedCard.focus();
+    lastFocusedCard = null;
+  }
+};
+
+const attachCardListeners = () => {
+  const cards = worksGrid.querySelectorAll('.works-card');
+  cards.forEach((card) => {
+    const projectId = card.dataset.id;
+    const project = projectsData.find((p) => p.id === projectId);
+
+    if (!project) return;
+
+    card.addEventListener('click', () => {
+      openModal(project, card);
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(project, card);
+      }
+    });
+  });
+};
+
 const renderCards = (projects) => {
   if (!worksGrid) return;
 
@@ -21,10 +132,12 @@ const renderCards = (projects) => {
 
   projects.forEach((project, index) => {
     const card = document.createElement('article');
-    card.className = `works-card works-card--${project.color}`;
+    card.className = `works-card works-card--${project.color || 'teal'}`;
     card.dataset.category = project.category;
     card.dataset.id = project.id;
     card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `View details for ${project.title}`);
     card.style.animationDelay = `${(index % 8) * 60 + 100}ms`;
 
     card.innerHTML = `
@@ -49,6 +162,8 @@ const renderCards = (projects) => {
 
     worksGrid.appendChild(card);
   });
+
+  attachCardListeners();
 };
 
 const filterWorks = (category) => {
@@ -64,9 +179,15 @@ const filterWorks = (category) => {
 };
 
 const initWorks = async () => {
-  const projects = await loadWorks();
-  renderCards(projects);
+  projectsData = await loadWorks();
 
+  if (projectsData.length > 0) {
+    renderCards(projectsData);
+  } else {
+    attachCardListeners();
+  }
+
+  // Tab switching
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
       tabs.forEach((t) => {
@@ -99,6 +220,21 @@ const initWorks = async () => {
         targetTab.click();
       }
     });
+  });
+
+  // Modal events
+  modalClose?.addEventListener('click', closeModal);
+
+  modalBackdrop?.addEventListener('click', (e) => {
+    if (e.target === modalBackdrop) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalBackdrop && !modalBackdrop.hasAttribute('hidden')) {
+      closeModal();
+    }
   });
 };
 

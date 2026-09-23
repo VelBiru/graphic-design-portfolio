@@ -46,6 +46,10 @@
 						aria-controls="works-grid" data-category="graphic">
 						<span>Graphic Design</span>
 					</button>
+					<button class="works-tab" type="button" role="tab" id="tab-webdev" aria-selected="false"
+						aria-controls="works-grid" data-category="webdev">
+						<span>Web Development</span>
+					</button>
 				</div>
 			</div>
 
@@ -92,7 +96,7 @@
 					</div>
 				</article>
 
-				<article class="works-card works-card--teal" data-category="uiux" data-id="project-3" tabindex="0">
+				<article class="works-card works-card--teal" data-category="webdev" data-id="project-3" tabindex="0">
 					<div class="works-card__media">
 						<div class="works-card__placeholder" aria-hidden="true">
 							<div class="works-card__wireframe-preview">
@@ -104,12 +108,11 @@
 					</div>
 					<div class="works-card__info">
 						<div class="works-card__header">
-							<span class="works-card__tag">Web App</span>
-							<span class="works-card__category">UI/UX Design</span>
+							<span class="works-card__tag">Full-Stack</span>
+							<span class="works-card__category">Web Development</span>
 						</div>
-						<h2 class="works-card__title">E-Commerce Design System</h2>
-						<p class="works-card__desc">Scalable design tokens, component library, and responsive interface
-							templates.</p>
+						<h2 class="works-card__title">E-Commerce Web Application</h2>
+						<p class="works-card__desc">High-performance full-stack e-commerce storefront with real-time cart and payment gateway.</p>
 					</div>
 				</article>
 
@@ -176,7 +179,7 @@
 					</div>
 				</article>
 
-				<article class="works-card works-card--teal" data-category="uiux" data-id="project-7" tabindex="0">
+				<article class="works-card works-card--teal" data-category="webdev" data-id="project-7" tabindex="0">
 					<div class="works-card__media">
 						<div class="works-card__placeholder" aria-hidden="true">
 							<div class="works-card__wireframe-preview">
@@ -188,12 +191,11 @@
 					</div>
 					<div class="works-card__info">
 						<div class="works-card__header">
-							<span class="works-card__tag">Website</span>
-							<span class="works-card__category">UI/UX Design</span>
+							<span class="works-card__tag">Front-End</span>
+							<span class="works-card__category">Web Development</span>
 						</div>
-						<h2 class="works-card__title">Creative Agency Landing Page</h2>
-						<p class="works-card__desc">High-impact storytelling landing page featuring dynamic grid layouts
-							and micro-interactions.</p>
+						<h2 class="works-card__title">Creative Studio Web Platform</h2>
+						<p class="works-card__desc">Interactive storytelling website with custom CSS animations and accessible architecture.</p>
 					</div>
 				</article>
 
@@ -220,6 +222,18 @@
 			</div>
 		</section>
 	</main>
+
+	<!-- Project Details Modal -->
+	<div class="works-modal-backdrop" id="works-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+		<div class="works-modal" id="works-modal">
+			<button class="works-modal__close" type="button" id="modal-close" aria-label="Close project details">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<div class="works-modal__content" id="modal-content">
+				<!-- Dynamically populated by js/works.js -->
+			</div>
+		</div>
+	</div>
 
 	<script type="module" src="js/works.js"></script>
 </body>

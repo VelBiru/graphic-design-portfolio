@@ -343,7 +343,7 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 760px) {
   .works-header {
     margin-bottom: 2rem;
   }
@@ -352,6 +352,7 @@
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    padding-bottom: 1px;
   }
 
   .works-tabs-bar::-webkit-scrollbar {
@@ -363,8 +364,37 @@
   }
 
   .works-tab {
-    padding: .75rem 1.1rem;
-    font-size: .82rem;
+    padding: .75rem 1.15rem;
+    font-size: .84rem;
+  }
+
+  .works-modal {
+    width: 95vw;
+    max-height: 88svh;
+    border-radius: 18px;
+  }
+
+  .works-modal__content {
+    padding: 1.25rem;
+  }
+
+  .works-modal__banner {
+    height: 160px;
+    margin-bottom: 1.25rem;
+  }
+
+  .works-modal__title {
+    font-size: 1.5rem;
+  }
+
+  .works-modal__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .works-modal__btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -381,4 +411,5 @@
     aspect-ratio: 1.35;
   }
 }
+
 
